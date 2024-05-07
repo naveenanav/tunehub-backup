@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IVIEW PLAYLIST</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Songs</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="playlist:${playlists}">
+				<td th:text="${playlist.name}"></td>
+				<td>
+				<audio controls>
+				<source th:src="${song.link}" type="audio/mpeg">
+				</audio>
+					</td>
+					<td>
+						<li th:each="song:${playlist.songs}">
+							<audio controls>
+							<source th:src="${song.link}">
+							</audio>
+					</ol>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
